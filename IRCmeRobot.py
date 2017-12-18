@@ -63,22 +63,22 @@ def error_callback(bot, update, error):
         try:
                 raise error
         except Unauthorized:
-                print "UnauthorizedError\n\n" + str(error)
+                print ('UnauthorizedError >> ' + str(error))
                 # remove update.message.chat_id from conversation list
         except BadRequest:
-                print "BadRequestError\n\n" + str(error)
+                print ('BadRequestError >> ' + str(error))
                 # handle malformed requests - read more below!
         except TimedOut:
-                print "TimedOutError\n\n" + str(error)
+                print ('TimedOutError >> ' + str(error))
                 # handle slow connection problems
         except NetworkError:
-                print "NetworkError\n\n" + str(error)
+                print ('NetworkError >> ' + str(error))
                 # handle other connection problems
         except ChatMigrated as e:
-                print "ChatMigratedError\n\n" + str(error)
+                print ('ChatMigratedError >> ' + str(error))
                 # the chat_id of a group has changed, use e.new_chat_id instead
         except TelegramError:
-                print "AnotherError\n\n" + str(error)
+                print ('AnotherError >> ' + str(error))
                 # handle all other telegram related errors
 
 start_handler = CommandHandler('start', start)
