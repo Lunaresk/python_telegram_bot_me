@@ -15,7 +15,7 @@ def getUser(update):
         return update.message.from_user
 
 def linkedUser(user):
-        return '[{}](tg://user?id={})'.format(user['first_name'], user['id'])
+        return u'[{}](tg://user?id={})'.format(user['first_name'], user['id'])
 
 def me(bot, update):
         theMe = linkedUser(getUser(update))
