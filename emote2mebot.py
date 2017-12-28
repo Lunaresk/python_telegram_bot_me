@@ -1,9 +1,9 @@
-from telegram.ext import Updater
 from telegram.ext import CommandHandler
 from telegram.error import (TelegramError, Unauthorized, BadRequest, TimedOut, ChatMigrated, NetworkError)
 from ircmefuncs import (linkedUser, getUser, getArgs, snowballText, kissText, slapText)
+from token import getToken
 
-updater = Updater(token='')
+updater = getToken()
 dispatcher = updater.dispatcher
 import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
