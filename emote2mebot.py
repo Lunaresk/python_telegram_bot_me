@@ -1,7 +1,7 @@
 from telegram.ext import CommandHandler
 from telegram.error import (TelegramError, Unauthorized, BadRequest, TimedOut, ChatMigrated, NetworkError)
 from ircmefuncs import (linkedUser, getUser, getArgs, snowballText, kissText, slapText)
-from token import getToken
+from bottoken import getToken
 
 updater = getToken()
 dispatcher = updater.dispatcher
@@ -24,19 +24,19 @@ def snowball(bot, update):
 	rmMessage(bot, update.message)
 
 def kiss(bot, update):
-        realText = kissText(update.message)
-        if realText is not None:
-                bot.send_message(chat_id=update.message.chat_id, text=realText, parse_mode = 'Markdown')
+	realText = kissText(update.message)
+	if realText is not None:
+		bot.send_message(chat_id=update.message.chat_id, text=realText, parse_mode = 'Markdown')
 	rmMessage(bot, update.message)
 
 def slap(bot, update):
-        realText = slapText(update.message)
-        if realText is not None:
-                bot.send_message(chat_id=update.message.chat_id, text=realText, parse_mode = 'Markdown')
+	realText = slapText(update.message)
+	if realText is not None:
+		bot.send_message(chat_id=update.message.chat_id, text=realText, parse_mode = 'Markdown')
 	rmMessage(bot, update.message)
 
 def cmds(bot, update):
-        bot.send_message(chat_id = update.message.chat_id, text = 'Available commands:\n/me [text]\n/snowball [name/mention]\n/kiss [name/mention]\n/slap [name/mention]\n\nAll commands except /me can also be triggered by replying to any other message.')
+	bot.send_message(chat_id = update.message.chat_id, text = 'Available commands:\n/me [text]\n/snowball [name/mention]\n/kiss [name/mention]\n/slap [name/mention]\n\nAll commands except /me can also be triggered by replying to any other message.')
 
 def rmMessage(bot, message):
 	if  message.chat.type != "private":

@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 # token
-token.py
+bottoken.py
