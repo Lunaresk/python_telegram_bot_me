@@ -81,4 +81,4 @@ def checkMessage(message):
 		return linkedUser(getUser(message.reply_to_message))
 	elif getMention(message) is not None:
 		return getMention(message)
-	return getArgs
+	return getArgs(message)
