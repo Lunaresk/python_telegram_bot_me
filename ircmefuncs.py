@@ -54,7 +54,7 @@ def slapText(message):
 		return u'{0} is angry about {1} and slaps {1} in the face.'.format(theMe, theArgs)
 	if scenario > 10:
 		return u'{0} shoves {1} angrily against the wall.'.format(theMe, theArgs)
-	return u'{0} tries to slap {1} but {1} predicted it and turns it into a high five.'.format(theMe, theArgs)
+	return u'{0} tries to slap {1} but {1} predicted it and turns it into a high-five.'.format(theMe, theArgs)
 
 def getArgs(message):
 	firstElem = message.entities[0].length + 1
